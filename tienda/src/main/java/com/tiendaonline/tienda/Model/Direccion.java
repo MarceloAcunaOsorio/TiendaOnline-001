@@ -13,6 +13,7 @@ public class Direccion
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_direccion")
     private int id_Direccion;
 
 
@@ -36,6 +37,11 @@ public class Direccion
     public void setIdDireccion(int id_Direccion )
     {
         this.id_Direccion = id_Direccion;
+    }
+
+    public void setNombreDireccion(String nombreDireccion)
+    {
+        this.nombreDireccion = nombreDireccion;
     }
     
 }

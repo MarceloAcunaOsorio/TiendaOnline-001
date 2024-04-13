@@ -13,6 +13,7 @@ public class TipoUsuario
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_rol")
     private int id_rol;
 
     @Column(name ="NombreRol")
