@@ -26,7 +26,7 @@ public class Usuario
     private String email_user;
 
     @Column(name = "direccion")
-    private Direccion direccion;
+    private String direccion;
 
     @Column(name = "rol")
     private TipoUsuario tipousuario;
@@ -53,7 +53,7 @@ public class Usuario
         return email_user;
     }
 
-    public Direccion getDireccion()
+    public String getDireccion()
     {
         return direccion;
     }
@@ -85,7 +85,7 @@ public class Usuario
        this.email_user = email_user;
     }
 
-    public void setDireccion(Direccion direccion)
+    public void setDireccion(String direccion)
     {
         this.direccion = direccion;
     }
