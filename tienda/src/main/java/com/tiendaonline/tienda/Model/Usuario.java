@@ -29,7 +29,7 @@ public class Usuario
     private String direccion;
 
     @Column(name = "rol")
-    private TipoUsuario tipousuario;
+    private int tipousuario;
 
 
     //setter
@@ -58,7 +58,7 @@ public class Usuario
         return direccion;
     }
 
-    public TipoUsuario getTipousuario()
+    public int getTipousuario()
     {
         return tipousuario;
     }
@@ -90,7 +90,7 @@ public class Usuario
         this.direccion = direccion;
     }
 
-    public void getTipousuario(TipoUsuario tipousuario)
+    public void getTipousuario(int tipousuario)
     {
        this.tipousuario = tipousuario;
     }
