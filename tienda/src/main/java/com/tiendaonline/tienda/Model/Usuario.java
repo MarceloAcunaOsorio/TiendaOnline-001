@@ -30,10 +30,6 @@ public class Usuario
     @Column(name = "nombre")
     private String nombre_user;
 
-   
-    @Column(name = "password")
-    private String password_user;
-
     @Email
     @Column(name = "email")
     private String email_user;
@@ -57,10 +53,6 @@ public class Usuario
         return nombre_user;
     }
 
-    public String getPassword()
-    {
-        return password_user;
-    }
 
     public String getEmail()
     {
@@ -87,11 +79,6 @@ public class Usuario
     public void setNombreuser(String nombre_user)
     {
         this.nombre_user = nombre_user;
-    }
-
-    public void serPassworduser(String password_user)
-    {
-        this.password_user = password_user;
     }
 
     public void setEmail(String email_user)
