@@ -1,13 +1,11 @@
 package com.tiendaonline.tienda.Model;
 
-import jakarta.persistence.CascadeType;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
@@ -25,8 +23,8 @@ public class Usuario
     private int id_user;
     
 
-    @NotBlank(message = "name is mandatory")
-    @NotNull(message = "name is mandatory")
+    //@NotBlank(message = "name is mandatory")
+    //@NotNull(message = "name is mandatory")
     @Column(name = "nombre")
     private String nombre_user;
 
@@ -37,10 +35,12 @@ public class Usuario
     @Column(name = "direccion")
     private String direccion;
 
-    @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "sesionusuario_id")
-    private SesionUsuario sesionUsuario;
+    @Column(name ="usuario")
+    private String usuario;
 
+
+    @Column(name = "Password")
+    private String password;
 
     //getter
     public int getId_user()
@@ -64,9 +64,14 @@ public class Usuario
         return direccion;
     }
 
-    public SesionUsuario getSesionusuario()
+    public String getUsuario()
     {
-        return sesionUsuario;
+        return usuario;
+    }
+
+    public String getPassword()
+    {
+        return password;
     }
 
 
@@ -91,9 +96,14 @@ public class Usuario
         this.direccion = direccion;
     }
 
-    public void getTipousuario(SesionUsuario sesionUsuario)
+    public void setUsuario(String usuario)
     {
-       this.sesionUsuario = sesionUsuario;
+       this.usuario = usuario;
+    }
+
+    public void setPassword(String password)
+    {
+      this.password = password;
     }
 
 }
