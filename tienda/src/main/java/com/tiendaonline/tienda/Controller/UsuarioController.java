@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tiendaonline.tienda.Service.UsuarioService;
-import com.tiendaonline.tienda.Service.UsuarioServiceImpl;
-import com.tiendaonline.tienda.Model.SesionUsuario;
+
 import com.tiendaonline.tienda.Model.Usuario;
 
 

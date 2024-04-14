@@ -3,7 +3,7 @@ package com.tiendaonline.tienda.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tiendaonline.tienda.Model.SesionUsuario;
+
 import com.tiendaonline.tienda.Model.Usuario;
 import com.tiendaonline.tienda.Repository.UsuarioRepository;
 
@@ -60,7 +60,5 @@ public class UsuarioServiceImpl implements UsuarioService
     {
         usuarioRepository.deleteById(id_user);
     }
-
-    
 
 }
