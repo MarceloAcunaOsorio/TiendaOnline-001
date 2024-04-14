@@ -17,6 +17,7 @@ public class SesionUsuario
     @Column(name = "idsesion")
     private int id_sesion;
 
+    
     @Column(name ="usuario")
     private String usuario;
 

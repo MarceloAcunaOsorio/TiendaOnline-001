@@ -1,10 +1,13 @@
 package com.tiendaonline.tienda.Model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
@@ -38,8 +41,9 @@ public class Usuario
     @Column(name = "direccion")
     private String direccion;
 
-    @Column(name = "rol")
-    private int tipousuario;
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "sesionusuario_id")
+    private SesionUsuario sesionUsuario;
 
 
     //getter
@@ -68,9 +72,9 @@ public class Usuario
         return direccion;
     }
 
-    public int getTipousuario()
+    public SesionUsuario getSesionusuario()
     {
-        return tipousuario;
+        return sesionUsuario;
     }
 
 
@@ -100,9 +104,9 @@ public class Usuario
         this.direccion = direccion;
     }
 
-    public void getTipousuario(int tipousuario)
+    public void getTipousuario(SesionUsuario sesionUsuario)
     {
-       this.tipousuario = tipousuario;
+       this.sesionUsuario = sesionUsuario;
     }
 
 }
