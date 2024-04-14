@@ -51,14 +51,14 @@ public class UsuarioController
 
 
     //buscar usuario
-    @GetMapping("/{id}")
-    public ResponseEntity<Object>getUsuarioById(@PathVariable int id_user)
+    @GetMapping("/{userId}")
+    public ResponseEntity<Object>getUsuarioById(@PathVariable int userId)
     {
-        Optional<Usuario> usuario = usuarioService.getUsuarioById(id_user);
+        Optional<Usuario> usuario = usuarioService.getUsuarioById(userId);
         if(usuario.isEmpty())
         {
-           log.error("No se encuentro el Usuario con ID {}",id_user);
-           return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse("No se encontro el usuario con ID" + id_user));
+           log.error("No se encuentro el Usuario con ID {}", userId);
+           return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse("No se encontro el usuario con ID " + userId));
         }
         return ResponseEntity.ok(usuario);
     }
@@ -73,7 +73,7 @@ public class UsuarioController
       Usuario createdUsuario = usuarioService.createUsuario(usuario);
       if(createdUsuario == null)
       {
-        log.error("Error al crear el Usuario {}",usuario);
+        log.error("Error al crear el Usuario {userId}",usuario);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse("Error al crear el Usuario"));
       }
       return ResponseEntity.ok(createdUsuario);
@@ -84,20 +84,20 @@ public class UsuarioController
 
 
     //Actualizar
-    @PutMapping("/{id}")
-    public Usuario updUsuario(@PathVariable int id_user, @RequestBody Usuario usuario)
+    @PutMapping("/{userId}")
+    public Usuario updUsuario(@PathVariable int userId, @RequestBody Usuario usuario)
     {
-        return usuarioService.updateUsuario(id_user, usuario);
+        return usuarioService.updateUsuario(userId, usuario);
     }
 
 
 
 
 
-    @DeleteMapping("/{id}")
-    public void deleteUsuario(@PathVariable int id_user)
+    @DeleteMapping("/{userId}")
+    public void deleteUsuario(@PathVariable int userId)
     {
-        usuarioService.deleteUsuario(id_user);
+        usuarioService.deleteUsuario(userId);
     }
     
     static class ErrorResponse

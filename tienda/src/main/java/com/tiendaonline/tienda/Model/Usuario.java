@@ -20,7 +20,7 @@ public class Usuario
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id_user;
+    private int userId;
     
 
     //@NotBlank(message = "name is mandatory")
@@ -43,9 +43,9 @@ public class Usuario
     private String password;
 
     //getter
-    public int getId_user()
+    public int getUserId()
     {
-        return id_user;
+        return userId;
     }
 
     public String getNombre_User()
@@ -76,9 +76,9 @@ public class Usuario
 
 
     //setter
-    public void setId(int id_user)
+    public void setUserId(int userId)
     {
-        this.id_user = id_user;
+        this.userId = userId;
     }
 
     public void setNombreuser(String nombre_user)

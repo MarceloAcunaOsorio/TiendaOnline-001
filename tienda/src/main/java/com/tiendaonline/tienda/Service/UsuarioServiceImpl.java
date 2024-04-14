@@ -24,9 +24,9 @@ public class UsuarioServiceImpl implements UsuarioService
     }
 
     @Override
-    public Optional<Usuario>getUsuarioById(int id_user)
+    public Optional<Usuario>getUsuarioById(int userId)
     {
-        return usuarioRepository.findById(id_user);
+        return usuarioRepository.findById(userId);
     }
 
 
@@ -40,11 +40,11 @@ public class UsuarioServiceImpl implements UsuarioService
 
     //actualizar
 
-    public Usuario updateUsuario (int id_user,Usuario usuario)
+    public Usuario updateUsuario (int userId,Usuario usuario)
     {
-        if(usuarioRepository.existsById(id_user))
+        if(usuarioRepository.existsById(userId))
         {
-            usuario.setId(id_user);
+            usuario.setUserId(userId);
             return usuarioRepository.save(usuario);
         }
         else
@@ -56,9 +56,9 @@ public class UsuarioServiceImpl implements UsuarioService
 
     //borrar usuario
     @Override
-    public void deleteUsuario(int id_user)
+    public void deleteUsuario(int userId)
     {
-        usuarioRepository.deleteById(id_user);
+        usuarioRepository.deleteById(userId);
     }
 
 }

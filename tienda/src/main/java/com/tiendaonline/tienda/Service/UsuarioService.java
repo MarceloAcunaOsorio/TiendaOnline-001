@@ -13,7 +13,7 @@ public interface UsuarioService
 
 
     //obtiene el id de los datos que estan en la clase Usuario
-    Optional<Usuario>getUsuarioById(int id_user);
+    Optional<Usuario>getUsuarioById(int userId);
 
 
     //crear
@@ -21,11 +21,11 @@ public interface UsuarioService
 
 
     //actualizar
-    Usuario updateUsuario(int id_user,Usuario usuario);
+    Usuario updateUsuario(int userId,Usuario usuario);
 
 
     //eliminar
-    void deleteUsuario(int id_user);
+    void deleteUsuario(int userId);
 
    
 
