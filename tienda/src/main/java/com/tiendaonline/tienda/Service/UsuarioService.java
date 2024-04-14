@@ -2,7 +2,6 @@ package com.tiendaonline.tienda.Service;
 
 import java.util.Optional;
 import com.tiendaonline.tienda.Model.Usuario;
-
 import java.util.List;
 
 public interface UsuarioService

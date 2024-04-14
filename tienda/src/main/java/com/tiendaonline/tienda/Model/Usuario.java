@@ -6,22 +6,32 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
+
 
 @Entity
 @Table(name = "Usuario")
 public class Usuario 
 {
+    @Valid
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id_user;
+    
 
+    @NotBlank(message = "name is mandatory")
+    @NotNull(message = "name is mandatory")
     @Column(name = "nombre")
     private String nombre_user;
 
+   
     @Column(name = "password")
     private String password_user;
 
+    @Email
     @Column(name = "email")
     private String email_user;
 
@@ -32,7 +42,7 @@ public class Usuario
     private int tipousuario;
 
 
-    //setter
+    //getter
     public int getId_user()
     {
         return id_user;

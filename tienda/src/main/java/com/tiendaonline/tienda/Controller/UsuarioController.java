@@ -22,9 +22,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-
+import jakarta.validation.constraints.*;
 
 
 
@@ -73,7 +72,7 @@ public class UsuarioController
       Usuario createdUsuario = usuarioService.createUsuario(usuario);
       if(createdUsuario == null)
       {
-        log.error("Error al crear el Usuario {}", usuario);
+        log.error("Error al crear el Usuario {}",usuario);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse("Error al crear el Usuario"));
       }
       return ResponseEntity.ok(createdUsuario);
@@ -115,8 +114,4 @@ public class UsuarioController
         }
     }
      
-    
-
-    
-    
 }
