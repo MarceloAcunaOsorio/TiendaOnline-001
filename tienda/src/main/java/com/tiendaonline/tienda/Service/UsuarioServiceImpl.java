@@ -61,4 +61,6 @@ public class UsuarioServiceImpl implements UsuarioService
         usuarioRepository.deleteById(userId);
     }
 
+
+
 }

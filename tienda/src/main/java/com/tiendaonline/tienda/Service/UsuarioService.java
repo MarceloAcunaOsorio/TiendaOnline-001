@@ -27,6 +27,6 @@ public interface UsuarioService
     //eliminar
     void deleteUsuario(int userId);
 
-   
+
 
 }
