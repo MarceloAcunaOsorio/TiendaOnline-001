@@ -38,7 +38,6 @@ public class Usuario
     @Column(name ="usuario")
     private String usuario;
 
-
     @Column(name = "Password")
     private String password;
 
