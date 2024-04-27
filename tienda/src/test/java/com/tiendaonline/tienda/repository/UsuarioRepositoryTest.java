@@ -32,29 +32,5 @@ public class UsuarioRepositoryTest
         //Assert
         assertNotNull(resultado.getUserId());
         assertEquals("John Doe",resultado.getNombre_User());
-    }
-
-
-   @Autowired
-   private UsuarioRepository usuarioRepository;
-
-   @Test
-   public void guardarUsuarioTest()
-   {
-     //Arrange
-     Usuario usuario = new Usuario();
-     usuario.setNombreuser("John Doe");
-
-
-
-     //Act
-     Usuario resultado = usuarioRepository.save(usuario);
-
-
-
-
-     //Assert
-     assertNotNull(resultado.getUserId());
-     assertEquals("John Doe",resultado.getUsuario());
-   }
+    }  
 }
