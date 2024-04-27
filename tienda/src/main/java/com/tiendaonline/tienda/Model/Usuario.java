@@ -9,11 +9,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
-
+//import org.springframework.hateoas.RepresentationModel;
 
 @Entity
 @Table(name = "Usuario")
-public class Usuario 
+public class Usuario //extends RepresentationModel<Usuario>
 {
     @Valid
 
@@ -37,7 +37,6 @@ public class Usuario
 
     @Column(name ="usuario")
     private String usuario;
-
 
     @Column(name = "Password")
     private String password;
