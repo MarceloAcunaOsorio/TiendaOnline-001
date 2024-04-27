@@ -47,13 +47,13 @@ public class UsuarioControllerTest
         usuario2.setNombreuser("Doe");
         usuario2.setUserId(2);
 
-        List<Usuario> peliculas = Arrays.asList(usuario1, usuario2);
-        when(usuarioServiceMock.getAllUsuarios()).thenReturn(peliculas);
+        List<Usuario> usuarios = Arrays.asList(usuario1, usuario2);
+        when(usuarioServiceMock.getAllUsuarios()).thenReturn(usuarios);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/usuarios"))
-        .andExpect(MockMvcResultMatchers.status().isOk())
-        .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.aMapWithSize(2)))
-        .andExpect(MockMvcResultMatchers.jsonPath("$._embedded.usuarioList[0].nombreuser", Matchers.is("John")))
-        .andExpect(MockMvcResultMatchers.jsonPath("$._embedded.usuarioList[1].nombreuser", Matchers.is("Doe")));
+               .andExpect(MockMvcResultMatchers.status().isOk())
+               .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.aMapWithSize(2)))
+               .andExpect(MockMvcResultMatchers.jsonPath("$._embedded.usuarioList[0].nombre_user", Matchers.is("John")))
+               .andExpect(MockMvcResultMatchers.jsonPath("$._embedded.usuarioList[1].nombre_user", Matchers.is("Doe")));
     }
 }
