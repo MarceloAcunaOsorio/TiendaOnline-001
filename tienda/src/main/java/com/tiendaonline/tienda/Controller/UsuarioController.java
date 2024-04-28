@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import jakarta.validation.Valid;
+
 
 import com.tiendaonline.tienda.Service.UsuarioService;
 import com.tiendaonline.tienda.Model.Usuario;
@@ -58,7 +58,7 @@ public class UsuarioController
     */
 
     //mostrar listado de usuarios
-        @GetMapping
+    @GetMapping
      public CollectionModel<EntityModel<Usuario>> getAllUsuarios()
      {
         log.info("GET /usuarios");
@@ -135,6 +135,7 @@ public class UsuarioController
 
     //CREAR
      //Crear
+     @PostMapping
      public EntityModel<Usuario> crearUsuario(@RequestBody Usuario usuario)
      {
          Usuario createdUsuario = usuarioService.createUsuario(usuario);
