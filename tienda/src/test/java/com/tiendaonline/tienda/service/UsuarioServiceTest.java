@@ -36,7 +36,7 @@ public class UsuarioServiceTest
    {
      //Arrange
      Usuario usuario = new Usuario();
-     usuario.setNombreuser("Jose Randon");
+     usuario.setNombre("Jose Randon");
 
      when(usuarioRepositorioMock.save(any())).thenReturn(usuario);
 
@@ -45,7 +45,7 @@ public class UsuarioServiceTest
 
 
      //Assert
-     assertEquals("Jose Randon", resultado.getNombreUser());
+     assertEquals("Jose Randon", resultado.getNombre());
 
    }
 }

@@ -23,7 +23,7 @@ public class UsuarioRepositoryTest
     {
         //Arrange
         Usuario usuario = new Usuario();
-        usuario.setNombreuser("John Doe");
+        usuario.setNombre("John Doe");
 
 
         //Act
@@ -31,6 +31,6 @@ public class UsuarioRepositoryTest
 
         //Assert
         assertNotNull(resultado.getUserId());
-        assertEquals("John Doe",resultado.getNombreUser());
+        assertEquals("John Doe",resultado.getNombre());
     }  
 }
