@@ -45,7 +45,7 @@ public class UsuarioServiceTest
 
 
      //Assert
-     assertEquals("Jose Randon", resultado.getNombre_User());
+     assertEquals("Jose Randon", resultado.getNombreUser());
 
    }
 }

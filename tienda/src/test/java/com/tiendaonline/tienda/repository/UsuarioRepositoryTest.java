@@ -31,6 +31,6 @@ public class UsuarioRepositoryTest
 
         //Assert
         assertNotNull(resultado.getUserId());
-        assertEquals("John Doe",resultado.getNombre_User());
+        assertEquals("John Doe",resultado.getNombreUser());
     }  
 }

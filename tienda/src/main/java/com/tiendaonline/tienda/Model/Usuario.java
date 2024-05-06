@@ -27,11 +27,11 @@ public class Usuario extends RepresentationModel<Usuario>
     //@NotBlank(message = "name is mandatory")
     //@NotNull(message = "name is mandatory")
     @Column(name = "nombre")
-    private String nombre_user;
+    private String nombreuser;
 
     @Email
     @Column(name = "email")
-    private String email_user;
+    private String emailuser;
 
     @Column(name = "direccion")
     private String direccion;
@@ -48,15 +48,15 @@ public class Usuario extends RepresentationModel<Usuario>
         return userId;
     }
 
-    public String getNombre_User()
+    public String getNombreUser()
     {
-        return nombre_user;
+        return nombreuser;
     }
 
 
     public String getEmail()
     {
-        return email_user;
+        return emailuser;
     }
 
     public String getDireccion()
@@ -81,14 +81,14 @@ public class Usuario extends RepresentationModel<Usuario>
         this.userId = userId;
     }
 
-    public void setNombreuser(String nombre_user)
+    public void setNombreuser(String nombreuser)
     {
-        this.nombre_user = nombre_user;
+        this.nombreuser = nombreuser;
     }
 
-    public void setEmail(String email_user)
+    public void setEmail(String emailuser)
     {
-       this.email_user = email_user;
+       this.emailuser = emailuser;
     }
 
     public void setDireccion(String direccion)

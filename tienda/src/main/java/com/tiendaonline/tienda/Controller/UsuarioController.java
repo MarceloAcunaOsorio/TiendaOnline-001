@@ -4,9 +4,7 @@ package com.tiendaonline.tienda.Controller;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
+
 import org.springframework.web.bind.annotation.PathVariable;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -98,20 +96,20 @@ public class UsuarioController
 
     // mostrar usuario segun el Id ingresado
     @GetMapping("/{userId}")
-    public EntityModel<Usuario> getUsuarioById(@PathVariable int id)
+    public EntityModel<Usuario> getUsuarioById(@PathVariable int userId)
     {
-       Optional<Usuario> usuario = usuarioService.getUsuarioById(id);
+       Optional<Usuario> usuario = usuarioService.getUsuarioById(userId);
 
        //verifica si la pelicula existe
        if(usuario.isPresent())
        {
          return EntityModel.of(usuario.get(),
-                WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).getUsuarioById(id)).withSelfRel(),
+                WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).getUsuarioById(userId)).withSelfRel(),
                 WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).getAllUsuarios()).withRel("All-usuarios"));
        }
        else
        {
-         throw new UsuarioNotFountException("Usuario no encontrada con el  id: " + id);
+         throw new UsuarioNotFountException("Usuario no encontrada con el  id: " + userId);
        }
     }
 
@@ -159,11 +157,11 @@ public class UsuarioController
 
     //ACTUALIZAR
     @PutMapping("/{userId}")
-    public EntityModel<Usuario> updateUsuario(@PathVariable int id, @RequestBody Usuario usuario)
+    public EntityModel<Usuario> updateUsuario(@PathVariable int userId, @RequestBody Usuario usuario)
     {
-        Usuario updateUsuario = usuarioService.updateUsuario(id, usuario);
+        Usuario updateUsuario = usuarioService.updateUsuario(userId, usuario);
         return EntityModel.of(updateUsuario,
-               WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).getUsuarioById(id)).withSelfRel(),
+               WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).getUsuarioById(userId)).withSelfRel(),
                WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(this.getClass()).getAllUsuarios()).withRel("all-usuarios"));
     }
 
